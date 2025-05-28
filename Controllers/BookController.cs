@@ -63,5 +63,14 @@ namespace BooksApi.Controllers
             return Ok("Book deleted successfully");
         }
 
+        // Delete All book at a time
+        [HttpDelete]
+        [Route("deleteAllBooks")]
+        public ActionResult DeleteAllBooks()
+        {
+            this._bookService.DeleteAllBooks();
+            return Ok("All Books Deleted Successfully");
+        }
+
     }
 }

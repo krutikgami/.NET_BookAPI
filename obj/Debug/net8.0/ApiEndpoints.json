@@ -17,6 +17,16 @@
   },
   {
     "ContainingType": "BooksApi.Controllers.BookController",
+    "Method": "DeleteAllBooks",
+    "RelativePath": "api/Book/deleteAllBooks",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "BooksApi.Controllers.BookController",
     "Method": "DeleteBook",
     "RelativePath": "api/Book/deleteBook",
     "HttpMethod": "DELETE",

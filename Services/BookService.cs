@@ -58,5 +58,11 @@ namespace BooksApi.Services
             }
         }
 
+        // Delete All books
+        public void DeleteAllBooks()
+        {
+            _books.Clear();
+        }
+
     }
 }
