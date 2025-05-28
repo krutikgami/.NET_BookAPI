@@ -14,17 +14,26 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/BookModel"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/BookModel"
+                }
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/BookModel"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/BookModel"
+                }
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/BookModel"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/BookModel"
+                }
               }
             }
           }

@@ -17,9 +17,12 @@ namespace BooksApi.Controllers
         // Add a new book
         [HttpPost]
         [Route("addBook")]
-        public ActionResult AddBook(BookModel book)
+        public ActionResult AddBook(List<BookModel> books)
         {
-            this._bookService.AddBook(book);
+            foreach (var book in books)
+            {
+                this._bookService.AddBook(book);
+            }
             return Ok("Book added successfully");
         }
 

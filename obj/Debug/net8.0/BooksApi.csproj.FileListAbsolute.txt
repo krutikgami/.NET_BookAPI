@@ -29,3 +29,4 @@ C:\Users\Krutik Gami\source\repos\BooksApi\BooksApi\obj\Debug\net8.0\refint\Book
 C:\Users\Krutik Gami\source\repos\BooksApi\BooksApi\obj\Debug\net8.0\BooksApi.pdb
 C:\Users\Krutik Gami\source\repos\BooksApi\BooksApi\obj\Debug\net8.0\BooksApi.genruntimeconfig.cache
 C:\Users\Krutik Gami\source\repos\BooksApi\BooksApi\obj\Debug\net8.0\ref\BooksApi.dll
+C:\Users\Krutik Gami\source\repos\BooksApi\BooksApi\obj\Debug\net8.0\BooksApi.sourcelink.json
