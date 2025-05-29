@@ -8,8 +8,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "books",
-        "Type": "System.Collections.Generic.List\u00601[[BooksApi.Models.BookModel, BooksApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Name": "bookDetails",
+        "Type": "System.Collections.Generic.List\u00601[[BookApi.Entites.Entites.BookDetails, BookApi.Entites, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": true
       }
     ],
@@ -77,7 +77,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "BooksApi.Models.BookModel",
+        "Type": "BookApi.Entites.Entites.BookDetails",
         "MediaTypes": [
           "text/plain",
           "application/json",

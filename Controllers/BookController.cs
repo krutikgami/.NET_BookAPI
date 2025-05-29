@@ -1,5 +1,7 @@
-﻿using BooksApi.Models;
+﻿using BookApi.Entites.Entites;
+using BooksApi.Models;
 using BooksApi.Services;
+using BooksApi.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BooksApi.Controllers
@@ -8,8 +10,8 @@ namespace BooksApi.Controllers
     [Route("api/[controller]")]
     public class BookController : ControllerBase
     {
-        private readonly BookService _bookService;
-        public BookController(BookService bookService)
+        private readonly IBookService _bookService;
+        public BookController(IBookService bookService)
         {
             _bookService = bookService;
         }
@@ -17,11 +19,11 @@ namespace BooksApi.Controllers
         // Add a new book
         [HttpPost]
         [Route("addBook")]
-        public ActionResult AddBook(List<BookModel> books)
+        public async Task<ActionResult> AddBook(List<BookDetails> bookDetails)
         {
-            foreach (var book in books)
+            foreach (var book in bookDetails)
             {
-                this._bookService.AddBook(book);
+               await _bookService.InsertBook(book);
             }
             return Ok("Book added successfully");
         }
@@ -38,11 +40,10 @@ namespace BooksApi.Controllers
         // Get a book by its Id
         [HttpGet]
         [Route("getBookById")]
-        public ActionResult<BookModel> GetBooksById(int id)
+        public ActionResult<BookDetails> GetBooksById(int id)
         {
-            var book = this._bookService.GetBookById(id);
+            var book = _bookService.GetBookDetailsById(id);
             return Ok(book);
-
         }
 
         // Update a book by its Id

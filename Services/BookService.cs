@@ -1,14 +1,19 @@
-﻿using BooksApi.Models;
+﻿using BookApi.Entites.Entites;
+using BookApi.Entites.Repositories.Interface;
+using BooksApi.Models;
+using BooksApi.Services.Interfaces;
 namespace BooksApi.Services
 {
-    public class BookService
+    public class BookService : IBookService
     {
 
         private List<BookModel> _books;
+        private readonly IBookRepositories _bookRepositories;
 
-        public BookService()
+        public BookService(IBookRepositories bookRepositories)
         {
             _books = new List<BookModel>();
+            _bookRepositories = bookRepositories;
 
         }
 
@@ -62,6 +67,16 @@ namespace BooksApi.Services
         public void DeleteAllBooks()
         {
             _books.Clear();
+        }
+
+        public async Task InsertBook(BookDetails bookDetails)
+        {
+            await _bookRepositories.InsertBook(bookDetails);
+        }
+
+        public BookDetails GetBookDetailsById(int id)
+        {
+            return _bookRepositories.GetBookById(id);
         }
 
     }
